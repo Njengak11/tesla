@@ -16,7 +16,17 @@ const CarItem = (props) =>{
 
      </View>
 
-     <StyledButton/>
+     <StyledButton type='primary' 
+     content={'Custom Order'} 
+     onPress={() => {
+       console.warn( 'custom order was pressed');
+     }}/>
+
+<StyledButton type='secondary' 
+     content={'existing Order'} 
+     onPress={() => {
+       console.warn( 'pressed');
+     }}/>
      </View>
     );
 };
