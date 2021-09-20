@@ -4,18 +4,25 @@ import StyledButton from '../styledButton'
 import styles from './styles';
 
 const CarItem = (props) =>{
+
+const { name, tagLine,tagLineCTA, image} = props;
+
     return(
         <View style={styles.carContainer}>
-        <ImageBackground source={require('../../assets/images/ModelS.jpeg')}
+        <ImageBackground source={image}
         style={styles.image}
         >
           </ImageBackground>
      <View style={styles.titles}>
-       <Text style={styles.model}> Model S </Text>
-       <Text style={styles.price}> Starting at $69,420</Text>
-
+       <Text style={styles.model}> {name} </Text>
+       <Text style={styles.subtitle}> {tagLine}
+       {/*white space*/}
+       {' '}  
+       <Text style={styles.subtitleCTA}>{tagLineCTA}</Text>
+       </Text>
+       
      </View>
-
+     <View style= {styles.buttonContainer}>
      <StyledButton type='primary' 
      content={'Custom Order'} 
      onPress={() => {
@@ -27,6 +34,8 @@ const CarItem = (props) =>{
      onPress={() => {
        console.warn( 'pressed');
      }}/>
+     </View>
+     
      </View>
     );
 };
