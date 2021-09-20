@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import CarItem from './components/carItems';
+import { StyleSheet, View, StatusBar } from 'react-native';
+import CarsList from './components/carsList';
+import Header from './components/header';
 
 
 
@@ -9,11 +10,10 @@ import CarItem from './components/carItems';
 export default function App() {
   return (
     <View style={styles.container}>
-      <CarItem name={'Model X'}
-      tagLine={'Order online for'}
-      tagLineCTA={'Touchless Delivery'}
-      image={require('./assets/images/ModelX.jpeg')}
-      />
+      <Header/>
+      <CarsList />
+
+      <StatusBar style='auto' />
     </View>
   );
 }
